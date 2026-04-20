@@ -1,0 +1,24 @@
+level: DEBUG
+
+# Reduce noise from common verbose libraries. These are applied after root level.
+mute:
+  - matplotlib
+  - matplotlib.font_manager
+  - PIL
+  - PIL.PngImagePlugin
+  - numba.core.ssa
+  - numba.core.byteflow
+  - numba.core.interpreter
+  - numba.core.cpu
+  - numba.core.dispatcher
+  - numba.core.registry
+  - numba.core.errors
+  - numba.core.utils
+  - numba.core.targets
+  - numba.core.targets.registry
+  - numba.core.targets.registry.CPU
+  - numba.core.typeinfer
+  - h5py._conv
+
+mute_level: WARNING
+

@@ -1,0 +1,9 @@
+name: local_outlier_factor
+
+# Unsupervised scores are usually not probabilities; typically ignored unless y_score in [0, 1].
+probability_threshold: null
+
+params:
+  n_neighbors: 20
+  novelty: true
+  contamination: 0.1

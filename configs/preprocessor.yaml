@@ -1,0 +1,24 @@
+defaults:
+  - logging: default
+  - _self_
+
+hydra:
+  run:
+    dir: output/preprocessor/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  job:
+    chdir: true
+
+data:
+  path_in: ./data/raw/SAVEE
+  path_out: ./data/interim/SAVEE
+
+audio:
+  formats: [".wav", ".mp3"]
+  sr: 16000
+  channels: 1
+  denoising: false
+  # Light VAD: trim leading/trailing silence via librosa.effects.trim (energy vs noise floor).
+  vad: false
+  vad_top_db: 20 # higher = trim more aggressively (typ. 20–30)
+  vad_pad_ms: 150 # expand trim bounds into the file to avoid clipping speech edges
+

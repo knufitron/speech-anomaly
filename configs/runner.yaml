@@ -1,0 +1,34 @@
+defaults:
+  - model: one_class_svm
+  - data: ravdess
+  - experiment: anomaly
+  - features: all
+  - /report/umap@report.umap: default
+  - /report/tsne@report.tsne: default
+  - /report/pca@report.pca: default
+  - /report/top@report.top: default
+  - report: basic
+  - logging: default
+  # Replace Hydra default job_logging (console + ${hydra.job.name}.log); we use run.log only.
+  - override hydra/job_logging: stdout
+  - _self_
+
+hydra:
+  run:
+    dir: output/runner/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  job:
+    chdir: true
+
+dry_run: false
+
+run:
+  output_dir: ""
+
+wandb:
+  enabled: false
+  project: voice-anomaly-detection-test
+  entity: ipzm-22
+  mode: online
+  tags: null
+  notes: test run
+

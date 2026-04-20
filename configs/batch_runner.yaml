@@ -1,0 +1,42 @@
+defaults:
+  - /batch/param_grids@param_grids: default
+  - override hydra/job_logging: stdout
+  - _self_
+
+hydra:
+  run:
+    dir: .cache/hydra_batch/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  job:
+    chdir: false
+
+# Root for this batch session (all experiment subdirs + results.tsv). Default set in code if empty.
+batch:
+  out_root: ""
+  max_runs: 0
+  after_all_top20: true
+  top_n_features: 20
+  # If true: report.include = [metrics, top] (top is required for top-N chained runs).
+  metrics_only_reports: true
+  # Avoid matplotlib PNG for top features (keeps top_features.tsv); reduces GUI-backend crashes under parallel jobs.
+  skip_top_png: true
+  # Flush results.tsv every N completed rows (primary + chained). 0 = write only at end.
+  results_flush_every: 100
+  # null = all installed models; or e.g. [logistic_regression, random_forest]
+  models: [random_forest]
+  # Subtracted after `models` (or after the full list when models is null). e.g. [xgb_classifier]
+  # models_skip: [elliptic_envelope, isolation_forest, local_outlier_factor, logistic_regression, one_class_svm, random_forest]
+  models_skip: []
+  datasets: [savee, ravdess]
+  scalers: [robust, standard, none]
+  actor_zscore: [true, false]
+  feature_groups: [all, prosodic, acoustic, voice_quality]
+
+dry_run: false
+
+logging:
+  level: INFO
+  mute: [matplotlib, PIL]
+  mute_level: WARNING
+
+wandb:
+  enabled: false

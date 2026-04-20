@@ -1,0 +1,20 @@
+defaults:
+  - logging: default
+  - _self_
+
+hydra:
+  run:
+    dir: output/feature_extractor/${now:%Y-%m-%d}/${now:%H-%M-%S}
+  job:
+    chdir: true
+
+data:
+  dataset: ravdess
+  # YAML list, or CLI: data.features=[prosodic,acoustic] (commas in CLI confuse Hydra).
+  # features: [prosodic,acoustic]
+  features: all
+  path_in: ./data/interim/RAVDESS
+  path_out: ./data/features/RAVDESS/all.tsv
+
+audio:
+  sr: 16000

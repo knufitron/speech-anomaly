@@ -1,0 +1,6 @@
+# F0 + energy from feature_extractor.extract_prosodic_and_acoustic ("prosodic" group).
+# duration is metadata (META_COLUMNS) and is not used as an ML feature column.
+mode: prefixes
+prefixes:
+  - F0_
+  - energy_

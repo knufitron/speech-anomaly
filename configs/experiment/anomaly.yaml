@@ -1,0 +1,10 @@
+name: anomaly
+scaler: robust
+# If true: print confusion matrices for thresholds 0.50..0.70 (step 0.02) on y_score.
+# Scores outside [0,1] are min-max scaled on the test split for this sweep only.
+debug_threshold_sweep: false
+actor_zscore:
+  enabled: true
+  actor_column: actor
+  label_column: label
+  eps: 1.0e-6

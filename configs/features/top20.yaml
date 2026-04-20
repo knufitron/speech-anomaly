@@ -1,0 +1,27 @@
+# Explicit high-impact subset for quick runs. Tuned for combined feature tables (e.g. all.tsv).
+# Ranks differ by model/dataset — replace this list after your own feature-importance analysis.
+# Override per run: --features=top20 +features.columns='[a,b,...]'  or a dedicated top20_xgb.yaml.
+mode: explicit
+
+# XGBoost Top 20 Features
+columns:
+  - mfcc_1_mean
+  - energy_mean
+  - energy_std
+  - mfcc_delta2_3_std
+  - jitter
+  - zcr_mean
+  - F0_mean
+  - mfcc_delta2_4_std
+  - F0_std
+  - mfcc_2_std
+  - mfcc_10_std
+  - mfcc_11_mean
+  - mfcc_8_std
+  - mfcc_delta_9_std
+  - mfcc_3_mean
+  - mfcc_6_std
+  - mfcc_delta2_10_std
+  - mfcc_4_mean
+  - mfcc_delta2_9_std
+  - mfcc_6_mean

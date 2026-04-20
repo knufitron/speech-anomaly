@@ -1,0 +1,17 @@
+name: ravdess
+path: data/features/RAVDESS/all_labeled.tsv
+
+savee_actor_map: null
+
+split:
+  test_size: 0.2
+  random_state: 42
+  stratify: true
+
+# Row filter (optional). Example CLI: --data.filter.column emotion --data.filter.value 1
+filter:
+  column: null
+  value: null
+
+# Column name for GroupShuffleSplit (e.g. actor). Null = ordinary train_test_split.
+groupby: actor

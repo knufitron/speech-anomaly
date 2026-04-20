@@ -1,0 +1,11 @@
+name: logistic_regression
+
+# P(anomaly) cutoff for hard labels when y_score is in [0, 1]; null = use `predict()`.
+probability_threshold: null
+
+params:
+  class_weight: balanced
+  C: 1.0
+  solver: liblinear
+  max_iter: 2000
+  random_state: 42

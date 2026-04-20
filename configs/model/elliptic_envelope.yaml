@@ -1,0 +1,9 @@
+name: elliptic_envelope
+
+# Unsupervised scores are usually not probabilities; typically ignored unless y_score in [0, 1].
+probability_threshold: null
+
+params:
+  contamination: 0.1
+  support_fraction: 0.8
+  random_state: 42

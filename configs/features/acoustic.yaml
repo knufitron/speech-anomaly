@@ -1,0 +1,9 @@
+# MFCC + spectral summaries from feature_extractor.extract_prosodic_and_acoustic ("acoustic" group).
+# Use with tables that include these columns (e.g. all.tsv or acoustic-only extract).
+mode: prefixes
+prefixes:
+  - mfcc_
+  - spec_
+  - zcr_
+  - spectral_contrast_
+  - chroma_

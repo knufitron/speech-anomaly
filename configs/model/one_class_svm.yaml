@@ -1,0 +1,10 @@
+name: one_class_svm
+
+# Only used when y_score is in [0, 1] (e.g. linear kernel + `predict_proba`-style scores); else ignored.
+probability_threshold: null
+
+params:
+  nu: 0.05 # values between 0.01 and 0.1 are good
+  kernel: rbf
+  gamma: scale
+

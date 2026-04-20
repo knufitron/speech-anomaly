@@ -1,0 +1,6 @@
+# Praat jitter / shimmer / HNR from extract_voice_quality.
+mode: explicit
+columns:
+  - jitter
+  - shimmer
+  - hnr

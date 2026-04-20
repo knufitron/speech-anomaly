@@ -1,0 +1,4 @@
+# Preset: which reports to run. Sub-configs (umap, tsne, pca) are composed in runner.yaml.
+include:  metrics, confusion_matrix, umap, tsne, pca
+
+data_debug: true

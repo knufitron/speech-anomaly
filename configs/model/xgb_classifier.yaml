@@ -1,0 +1,14 @@
+name: xgb_classifier
+
+# P(anomaly) cutoff for hard labels when y_score is in [0, 1]; null = use `predict()`.
+probability_threshold: null
+
+params:
+  n_estimators: 100 # The number of boosting rounds (trees) to build
+  learning_rate: 0.05 # Learning rate (shrinkage) controls the contribution of each tree
+  # scale_pos_weight: 0.07
+  scale_pos_weight: 0.15 # Weight of positive class (anomalies) in loss function
+  # scale_pos_weight: 0.5
+  random_state: 42
+  n_jobs: -1
+  eval_metric: logloss

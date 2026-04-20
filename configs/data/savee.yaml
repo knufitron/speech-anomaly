@@ -1,0 +1,19 @@
+name: savee
+path: data/features/SAVEE_VAD/all_labeled.tsv
+
+savee_actor_map:
+  KL: 25
+  JK: 26
+  JE: 27
+  DC: 28
+
+split:
+  test_size: 0.2
+  random_state: 42
+  stratify: true
+
+filter:
+  column: null
+  value: null
+
+groupby: null
